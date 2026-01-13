@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stock Widget</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="./style.css" />
+    <!-- ECharts 来自 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="titlebar">
+        <div id="title">Stock Widget</div>
+        <div id="controls">
+          <button id="btn-toggle-mode">切换 K/分时</button>
+          <button id="btn-settings">⚙️</button>
+          <button id="btn-new">＋</button>
+          <button id="btn-close">×</button>
+        </div>
+      </div>
+      <div id="chart" style="width:100%;height:calc(100% - 36px)"></div>
+
+      <div id="settings" class="hidden">
+        <label>股票代码: <input id="stock-code" /></label>
+        <label>模式:
+          <select id="mode-select">
+            <option value="realtime">分时</option>
+            <option value="kline">K线</option>
+          </select>
+        </label>
+        <label>K线粒度: <input id="kline-scale" type="number" min="1" value="240"></label>
+        <button id="btn-save">保存</button>
+        <button id="btn-cancel">取消</button>
+      </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

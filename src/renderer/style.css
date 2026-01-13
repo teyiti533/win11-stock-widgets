@@ -1,0 +1,16 @@
+:root {
+  --bg: #0b1220;
+  --panel: #0f1724;
+  --accent: #1f8fff;
+  --text: #e6eef8;
+}
+html,body,#root { height: 100%; margin: 0; padding: 0; font-family: system-ui, "Segoe UI", Roboto, "Microsoft YaHei"; background: var(--bg); color: var(--text); }
+#titlebar { height: 36px; display:flex; align-items:center; justify-content:space-between; padding:0 8px; background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); }
+#title { font-weight:600; font-size:13px; }
+#controls button { margin-left:6px; background:transparent; border: none; color:var(--text); cursor:pointer; font-size:13px; }
+#chart { padding: 6px; box-sizing: border-box; }
+#settings { position:absolute; top:40px; right:8px; background:var(--panel); padding:8px; border-radius:6px; box-shadow: 0 6px 18px rgba(0,0,0,0.5); z-index:10; }
+.hidden { display:none; }
+#settings label { display:block; margin:6px 0; font-size:13px; }
+#settings input, #settings select { background:#0b1530; color:var(--text); border:1px solid rgba(255,255,255,0.04); padding:4px 6px; border-radius:4px; }
+#btn-save { margin-right:6px; }

@@ -1,0 +1,48 @@
+{
+  "name": "win11-stock-widgets",
+  "version": "0.1.0",
+  "description": "Windows 11 desktop stock widgets (resizable) using Sina Finance data (Electron + ECharts)",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "tsc -p . && electron .",
+    "build:ts": "tsc -p .",
+    "dist": "npm run build:ts && electron-builder --win",
+    "pack": "npm run build:ts && electron-builder --dir",
+    "lint": "echo \"No lint configured\""
+  },
+  "author": "teyiti533",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "build": {
+    "appId": "com.example.win11stockwidgets",
+    "productName": "Win11StockWidgets",
+    "files": [
+      "dist/**/*",
+      "src/renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
