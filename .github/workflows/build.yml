@@ -19,7 +19,8 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        # 将原先的 `npm ci` 改为 `npm install`，以避免在缺少 package-lock.json 时失败
+        run: npm install
 
       - name: Build TypeScript
         run: npm run build:ts
